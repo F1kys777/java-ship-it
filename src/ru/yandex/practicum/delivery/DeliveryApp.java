@@ -9,9 +9,9 @@ public class DeliveryApp {
     private static final Scanner scanner = new Scanner(System.in);
     private static List<Parcel> allParcels = new ArrayList<>();
     private static List<Trackable> trackableParcels = new ArrayList<>();
-    private static ParcelBox<StandardParcel> standardBox = new ParcelBox<>(52);
-    private static ParcelBox<FragileParcel> fragileBox = new ParcelBox<>(67);
-    private static ParcelBox<PerishableParcel> perishableBox = new ParcelBox<>(152);
+    private static ParcelBox standardBox = new ParcelBox(52);
+    private static ParcelBox fragileBox = new ParcelBox(67);
+    private static ParcelBox perishableBox = new ParcelBox(152);
 
     public static void main(String[] args) {
         boolean running = true;
@@ -116,7 +116,7 @@ public class DeliveryApp {
 
         int choice = Integer.parseInt(scanner.nextLine());
 
-        List<? extends Parcel> parcels = null;
+        List<Parcel> parcels = null;
         switch (choice) {
             case 1:
                 parcels = standardBox.getAllParcels();

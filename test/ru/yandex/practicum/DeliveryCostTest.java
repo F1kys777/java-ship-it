@@ -88,7 +88,7 @@ public class DeliveryCostTest {
 
     @Test
     void addParcelSuccess() {
-        ParcelBox<StandardParcel> box = new ParcelBox<>(50);
+        ParcelBox box = new ParcelBox(50);
         StandardParcel p1 = new StandardParcel("Ronnie", 20, "Moscow", 1);
         StandardParcel p2 = new StandardParcel("Coleman", 29, "Cincinnati", 1);
         box.addParcel(p1);
@@ -98,7 +98,7 @@ public class DeliveryCostTest {
 
     @Test
     void addParcelFails() {
-        ParcelBox<FragileParcel> box = new ParcelBox<>(40);
+        ParcelBox box = new ParcelBox(40);
         FragileParcel p1 = new FragileParcel("Ronnie", 21, "Moscow", 3);
         FragileParcel p2 = new FragileParcel("Coleman", 20, "Tokyo", 4);
         box.addParcel(p1);
@@ -108,7 +108,7 @@ public class DeliveryCostTest {
 
     @Test
     void addParcelBorder() {
-        ParcelBox<PerishableParcel> box = new ParcelBox<>(100);
+        ParcelBox box = new ParcelBox(100);
         PerishableParcel p1 = new PerishableParcel("Ronnie", 40, "Tokyo", 5, 2);
         PerishableParcel p2 = new PerishableParcel("Coleman", 60, "Cincinnati", 6, 1);
         box.addParcel(p1);
